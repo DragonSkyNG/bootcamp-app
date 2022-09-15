@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import DemoComponent from "./components/ExampleOne/DemoComponent";
 import Button from "./components/UI/Button";
 import "./App.css";
+import UseMemoExample from "./components/UseMemoExample";
 
 function App() {
   const [paragraphIsTrue, setParagraphIsTrue] = useState(true);
@@ -21,6 +22,7 @@ function App() {
       {/* Even though we already useCallback on changeHandler
           we still need to use React.memo() on button component for it to not re-evaluate */}
       <Button onClick={changeHandler}>Change paragraph</Button>
+      <UseMemoExample />
     </div>
   );
 }
